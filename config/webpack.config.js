@@ -347,11 +347,8 @@ module.exports = function (webpackEnv) {
                     loader: require.resolve('source-map-loader'),
                 },
                 {
-                    test: /\.(png|jpg|gif|svg)$/,
-                    use: 'url-loader',
-                    options: {
-                        name: 'images/[name].[ext]'
-                    },
+                    test: [/\.(png|jpg|gif|svg)$/],
+                    use: require.resolve('url-loader')
                 },
                 {
                     // "oneOf" will traverse all following loaders until one will
